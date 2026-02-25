@@ -1,15 +1,17 @@
 package model;
 
+import model.enums.ProfDegree;
+
 public class Professor {
 	//Mainigie
 	private long profId;
 	private String name;
 	private String surname;
 	private String personCode;
-	private String degree;
+	private ProfDegree degree;
 
 	//Paligmainigais bez setera/getera
-	private static long counter = 0;
+	private static long counter = 10000;
 	
 	//Geteri 
 	public long getProfID() {
@@ -24,12 +26,12 @@ public class Professor {
 	public String getPersonCode() {
 		return personCode;
 	}
-	public String getDegree() {
+	public ProfDegree getDegree() {
 		return degree;
 	}
 	
 	//Seteri
-	public void setStudID() {
+	public void setProfID() {
 		profId = counter;
 		counter++;
 	}
@@ -59,26 +61,27 @@ public class Professor {
 		}
 		
 	}
-	public void setDegree(String inputDegree) {
-		if((inputDegree != null) && (!inputDegree.isEmpty()) && (inputDegree.matches("[A-Z]{1}[a-z]{2,30}")) ) {
+	public void setDegree(ProfDegree inputDegree) {
+		if(inputDegree != null) {
 			degree = inputDegree;
 		}
-		else{
-			degree = "Unknown";
+		else {
+			degree = ProfDegree.unknown;
 		}
 	}
 	
-	//Bezargumenta knstruktors
+	//Bezargumenta konstruktors
 	public Professor() {
-		setStudID();
+		setProfID();
 		setName("Janis");
 		setSurname("Kalnins");
 		setPersonCode("123456-12345");
+		setDegree(ProfDegree.master);
 	}
 	
 	//Argumenta konstruktors
-	public Professor(String inputName, String inputSurname, String inputPersonCode, String inputDegree) {
-		setStudID();
+	public Professor(String inputName, String inputSurname, String inputPersonCode, ProfDegree inputDegree) {
+		setProfID();
 		setName(inputName);
 		setSurname(inputSurname);
 		setPersonCode(inputPersonCode);
@@ -88,7 +91,7 @@ public class Professor {
 	//toString funkcija
 	@Override //var nerakstit
 	public String toString() {
-		String result = profId + ": " + name + " " + surname + " (" + personCode + ")";
+		String result = profId + ": " + name + " " + surname + " (" + personCode + ") " + degree;
 		return result;
 	}
 	
