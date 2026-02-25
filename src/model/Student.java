@@ -73,9 +73,12 @@ public class Student {
 		setPersonCode(inputPersonCode);
 	}
 	
-	
-	//toString funkcijas
-	
+	//toString funkcija
+	@Override //var nerakstit
+	public String toString() {
+		String result = studId + ": " + name + " " + surname + " (" + personCode + ")";
+		return result;
+	}
 	
 	//Parejas funkcijas
 	
