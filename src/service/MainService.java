@@ -42,7 +42,12 @@ public class MainService {
 		System.out.println();
 		System.out.println("--------------- Atzimes: ------------------");
 		System.out.println();
-		//System.out.println(grade1);
+		Grade grade1 = new Grade();
+		System.out.println(grade1);
+		Grade grade2 = new Grade((byte)8,stud2,course2);
+		System.out.println(grade2);
+		Grade grade3 = new Grade((byte)10,stud3,course3);
+		System.out.println(grade3);
 
 	}
 

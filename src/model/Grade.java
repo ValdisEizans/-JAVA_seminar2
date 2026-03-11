@@ -9,7 +9,7 @@ public class Grade {
 	private Course course;
 	
 	//Paligmainigais bez setera/getera
-	private static long counter = 0;
+	private static long counter = 30000;
 	
 	//Geteri 	
 	public long getgradeId() {
@@ -64,9 +64,9 @@ public class Grade {
 	}
 	
 	//Argumenta konstruktors
-	public Grade(byte inputValue, Student inputStudent, Course inputCourse) {
+	public Grade(byte inputGradeValue, Student inputStudent, Course inputCourse) {
 		setGradeId();
-		setGradeValue(inputValue);
+		setGradeValue(inputGradeValue);
 		setStudent(inputStudent);
 		setCourse(inputCourse);
 	}
