@@ -35,16 +35,32 @@ public class Person {
 		}
 	}
 	public void setPersonCode(String inputPersoncode) {
-		//TODO regex maska dienam un menesiem
 		if ((inputPersoncode != null) && (!inputPersoncode.isEmpty()) && (inputPersoncode.matches("[0-9]{6}[-]{1}[0-9]{5}")) ) {
 			personCode = inputPersoncode;
 		}
 		else {
 			personCode = "Unknown";
 		}
-		
 	}
 
+	//Bezargumenta konstruktors
+	public Person() {
+		setName("Guntis");
+		setSurname("Priede");
+		setPersonCode("123456-78541");
+	}
 	
-	//Parejas funkcijas
+	//Argumenta konstruktors
+	public Person(String inputName, String inputSurname, String inputPersonCode) {
+		setName(inputName);
+		setSurname(inputSurname);
+		setPersonCode(inputPersonCode);
+	}
+	
+	//toString funkcija
+	@Override //var nerakstit
+	public String toString() {
+		String result = name + " " + surname + " (" + personCode + ")";
+		return result;
+	}
 }
