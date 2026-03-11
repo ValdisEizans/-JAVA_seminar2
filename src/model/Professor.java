@@ -34,7 +34,7 @@ public class Professor extends Person{
 	
 	//Bezargumenta konstruktors
 	public Professor() {
-		super(); // Izsaucas automatiski Person konstruktors, JABUT KODA 1. RINDA!!!!
+		super("Gundars","Berzins","965874-52140"); // Izsaucas automatiski Person argumenta konstruktors, JABUT KODA 1. RINDA!!!!
 		setProfID();
 		setDegree(ProfDegree.master);
 	}
@@ -49,11 +49,7 @@ public class Professor extends Person{
 	//toString funkcija
 	@Override //var nerakstit
 	public String toString() {
-		String result = profId + ": " + name + " " + surname + " (" + personCode + ") " + degree;
+		String result = profId + ": " + super.name + " " + super.surname + " (" + super.personCode + ") " + degree;
 		return result;
 	}
-	
-	//Parejas funkcijas
-	
-	
 }
