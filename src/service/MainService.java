@@ -68,6 +68,34 @@ public class MainService {
 		for (Grade tempG : allGrades) {
 			System.out.println(tempG);
 		}
-}
+	}
+	
+	//CRUD - create, retrieve, update, delete
+	
+	//Create student
+	public static void createStudent(String inputName, String inputSurname, String inputPersoncode) throws Exception{
+		//TO DO parbaudit ienakosos parametrus
+		for(Student temps : allStudents) {
+			if(temps.getPersonCode().equals(inputPersoncode)) {
+				throw new Exception("Tads students jau eksiste!");
+			}
+		}
+		Student newStudent = new Student(inputName, inputSurname, inputPersoncode);
+		allStudents.add(newStudent);
+	}
+
+	//Retrieve by ID student
+	public static Student getStudentById(long id) throws Exception {
+		if(id < 0) {
+			throw new Exception("ID nevar but negativs!");
+		}
+		for(Student tempS : allStudents) {
+			if(tempS.getStudID() == id) {
+				return tempS;			}
+		}		
+		throw new Exception("Students ar ID" + id + " neeksiste!"); 
+	}
+	
+	
 
 }
