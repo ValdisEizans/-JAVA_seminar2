@@ -68,6 +68,24 @@ public class MainService {
 		for (Grade tempG : allGrades) {
 			System.out.println(tempG);
 		}
+
+		System.out.println();
+		System.out.println("--------------- CRUD testesana: ------------------");
+		System.out.println();
+		try {
+			createStudent("Imants", "Zarins", "258740-96523");
+			System.out.println(allStudents);
+			System.out.println(getStudentById(4));
+			System.out.println(updateById(0, "Guntitis", "Ziepitis"));
+			System.out.println(allStudents);
+			deleteById(4);
+			System.out.println(allStudents);
+
+		}
+		catch (Exception e){
+			System.out.println(e.getMessage());
+		}
+	
 	}
 	
 	//CRUD - create, retrieve, update, delete
@@ -93,7 +111,7 @@ public class MainService {
 			if(tempS.getStudID() == id) {
 				return tempS;			}
 		}		
-		throw new Exception("Students ar ID" + id + " neeksiste!"); 
+		throw new Exception("Students ar ID " + id + " neeksiste!"); 
 	}
 	
 	//Update students name and/or surname
