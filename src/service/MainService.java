@@ -165,6 +165,29 @@ public class MainService {
 		}
 	}
 	
+	//calculates average grade for each student
+	public static float calculateAverageGradeForStudent(String inputPersoncode) throws Exception{
+		if ((inputPersoncode == null) || (inputPersoncode.isEmpty()) || (!inputPersoncode.matches("[0-9]{6}[-]{1}[0-9]{5}")) ) {
+			throw new Exception("Nepareizi ievades dati!");
+		}
+		int count = 0;
+		float sum = 0;
+		for(Grade tempG : allGrades) {
+			if(tempG.getStudent().getPersonCode().equals(inputPersoncode)) {
+				count++;
+				sum = sum + tempG.getGradeValue();
+			}
+		}
+		if(count == 0) {
+			throw new Exception("Studentam ar perosnas kodu" + inputPersoncode + " nav atzimju!");
+		}
+		else {
+			return (sum/count);
+		}
+		
+	}
+	
+	
 	
 	
 
