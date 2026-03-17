@@ -94,7 +94,18 @@ public class MainService {
 		catch (Exception e){
 			System.out.println(e.getMessage());
 		}
-	
+
+		
+		System.out.println();
+		System.out.println("--------------- Videja atzime testesana: ------------------");
+		System.out.println();
+		try {
+			System.out.println(stud2.getName() + " videja atzime " + calculateAverageGradeForStudent("785412-96541"));
+		}
+		catch (Exception e){
+			System.out.println(e.getMessage());
+		}
+
 	}
 	
 	//CRUD - create, retrieve, update, delete
